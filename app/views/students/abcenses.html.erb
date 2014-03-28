@@ -1,0 +1,10 @@
+<h1>Who's Absent?</h1>
+  <% @notHere.each do |n| %>
+   <div class="avatar pull-left" style='background-image: url(<%= n.avatar %>)'></div>
+
+    <div class="list-item">
+      <h4><%= n.name %></h4>
+      <p><em>(<%= n.nickname %>)</em></p>
+      <p><%= n.email %></p>
+     </div>
+  <% end %>

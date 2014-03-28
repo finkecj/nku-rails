@@ -1,0 +1,6 @@
+<h1>Record your Attendance!</h1>
+<%= form_for @attendance do |a| %>
+<%= a.label :seat, "Enter Your Seat Number (1-4)" %>
+<%= a.number_field :seat, min:1, max:4 %>
+<%= a.submit %>
+<% end %>

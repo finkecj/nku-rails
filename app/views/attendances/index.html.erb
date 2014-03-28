@@ -1,0 +1,15 @@
+<h1>Attendances as of <%= Date.today %></h1>
+
+<table cellpadding="15px">
+  <tr>
+    <td>Name</td>
+    <td>Date</td>
+    <td>Seat</td>
+  </tr>
+<% @attendances.each do |a| %>
+  <tr>
+    <td><%= link_to a.student.name, attendances_path %></td>
+    <td><%= a.attended_on %></td>
+    <td><%= a.seat %></td>
+  </tr>
+<% end %>

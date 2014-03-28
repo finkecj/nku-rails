@@ -1,0 +1,71 @@
+<div class="page-header">
+  <h1>Who's in class?</h1>
+  <%= form_tag({:controller => "students"}, :method => :get) %> 
+  <%= date_field_tag(:date_var, @current_date) %>
+  <%= submit_tag %>
+  <%= link_to "Attendances", attendances_path %>
+</div>
+<div style = "float:right, width:50%">
+<table class="seating-table">
+  <tbody>
+  <tr>
+  <td>
+    <div style = "float:top"><h2>Seat 1</h2></div>
+    <% @seat1.each do |s| %>
+    <div class="avatar pull-left" style='background-image: url(<%= s.avatar %>)'></div>
+
+    <div class="list-item">
+      <h4><%= s.name %></h4>
+      <h5><em>(<%= s.nickname %>)</em></h5>
+      <h5><%= s.email %></h5>
+     </div>
+    <% end %>
+   </td>
+  <td>
+    <div style = "float:top"><h2>Seat 2</h2></div>
+    <% @seat2.each do |s| %>
+    <div class="avatar pull-left" style='background-image: url(<%= s.avatar %>)'></div>
+
+    <div class="list-item">
+      <h4><%= s.name %></h4>
+      <h5><em>(<%= s.nickname %>)</em></h5>
+      <h5><%= s.email %></h5>
+     </div>
+    <% end %>
+   </td>
+ </tr>
+ <tr>
+  <td>
+    <div style = "float:top"><h2>Seat 3</h2></div>
+    <% @seat3.each do |s| %>
+    <div class="avatar pull-left" style='background-image: url(<%= s.avatar %>)'></div>
+
+    <div class="info-block">
+      <h4><%= s.name %></h4>
+      <h5><em>(<%= s.nickname %>)</em></h5>
+      <h5><%= s.email %></h5>
+     </div>
+    <% end %>
+   </td>
+  <td>
+    <div style = "float:top"><h2>Seat 4</h2></div>
+    <% @seat4.each do |s| %>
+    <div class="avatar pull-left" style='background-image: url(<%= s.avatar %>)'></div>
+
+    <div class="info-block">
+      <h4><%= s.name %></h4>
+      <h5><em>(<%= s.nickname %>)</em></h5>
+      <h5><%= s.email %></h5>
+     </div>
+    <% end %>
+   </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+      <td colspan=2>Front of classroom</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
